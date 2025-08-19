@@ -3,161 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preset Om Yudz</title>
+  <title>Koleksi Preset Om Yudz</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: #0f172a;
-      color: #f1f5f9;
-      margin: 0;
-      padding: 20px;
+      color: white;
+    }
+
+    /* Fullscreen Intro */
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    #intro video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Animasi fade out */
+    .fade-out {
+      animation: fadeOut 1s forwards;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
     }
 
     /* Header Website */
     header {
       text-align: center;
-      margin-bottom: 30px;
-    }
-    header img {
-      width: 100px;   /* 👈 ubah ukuran logo di sini */
-      height: 100px;  /* 👈 ubah ukuran logo di sini */
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #475569;
-    }
-    header h1 {
-      margin: 10px 0 0 0;
-      font-size: 26px;
-    }
-    header p {
-      color: #94a3b8;
-      font-size: 15px;
-      margin: 5px 0 0 0;
+      margin: 20px 0;
     }
 
-    /* Card Style */
-    .card {
-      max-width: 600px;
-      margin: 20px auto;
-      background: #1e293b;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
     }
+
+    header h1 {
+      margin: 10px 0 0 0;
+    }
+
+    header p {
+      color: #94a3b8;
+    }
+
+    /* Card */
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
     .header {
       display: flex;
       align-items: center;
       gap: 12px;
       margin-bottom: 12px;
     }
+
     .avatar {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid #475569;
     }
-    h2 { font-size: 17px; margin: 0; }
+
     video {
       width: 100%;
-      border-radius: 12px;
-      margin: 10px 0;
-    }
-    button {
-      padding: 8px 12px;
-      border: none;
       border-radius: 8px;
-      background: #334155;
-      color: white;
-      cursor: pointer;
-      margin: 8px 0;
+      margin-bottom: 10px;
     }
-    button:hover { background: #475569; }
+
+    button {
+      background: #3b82f6;
+      border: none;
+      padding: 8px 12px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+
     a {
       display: block;
-      padding: 10px;
-      margin: 6px 0;
-      background: #334155;
-      color: #f1f5f9;
+      margin: 4px 0;
+      color: #38bdf8;
       text-decoration: none;
-      border-radius: 10px;
-      font-size: 14px;
     }
-    a:hover { background: #475569; }
   </style>
 </head>
 <body>
 
+  <!-- Intro Video -->
+  <div id="intro">
+    <video autoplay muted playsinline>
+      <source src="https://files.catbox.moe/introvideo.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <!-- Header Website -->
   <header>
-    <img src="https://files.catbox.moe/eer4qt.png" alt="Logo Website">
-    <h1>PRESET OM YUDZ x NONOMI</h1>
-    <p>Video + Musik + File Project XML</p>
+    <img src="https://files.catbox.moe/eer4qt.png" alt="Logo">
+    <h1>Preset Om Yudz x Nonomi</h1>
+    <p>Video + Preset + Project XML</p>
   </header>
 
-  <!-- Video 1 -->
+  <!-- Card 1 -->
   <div class="card">
     <div class="header">
-      <img src="https://files.catbox.moe/eer4qt.png" alt="Foto Profil" class="avatar">
-      <h2>Preset 1 (9:16) — By Om Yudz</h2>
+      <img src="https://files.catbox.moe/avatar1.png" class="avatar" alt="Profil">
+      <h2>Preset 1 — By Om Yudz</h2>
     </div>
     <video controls>
       <source src="https://files.catbox.moe/4zk2ey.mp4" type="video/mp4">
     </video>
     <audio id="music1" loop>
-      <source src="https://files.catbox.moe/wtzm81.mp3" type="audio/mpeg">
+      <source src="https://files.catbox.moe/music1.mp3" type="audio/mpeg">
     </audio>
     <button onclick="toggleAudio('music1', this)">🔊 Hidupkan Audio</button>
-    <a href="https://alightcreative.com/am/share/u/QG2Fq8NmuEXK1BqvsruIFVMidZp1/p/Q7Y3bgmIb5-ac33c0c74e1a18db?source=videoqr">📦 File Project (5MB)</a>
-    <a href="https://drive.google.com/file/d/1inzGKzjp_rpnW2ONR7V9-zrpEClghY-J/view?usp=drivesdk">📝 File XML</a>
+    <a href="https://files.catbox.moe/project1.zip">📦 File Project (5MB)</a>
+    <a href="https://files.catbox.moe/xml1.xml">📝 File XML</a>
   </div>
 
-  <!-- Video 2 -->
+  <!-- Card 2 -->
   <div class="card">
     <div class="header">
-      <img src="https://files.catbox.moe/eer4qt.png" alt="Foto Profil" class="avatar">
-      <h2>Preset 2 (4:5) — By Om Yudz</h2>
+      <img src="https://files.catbox.moe/avatar2.png" class="avatar" alt="Profil">
+      <h2>Preset 2 — By Om Yudz</h2>
     </div>
     <video controls>
       <source src="https://files.catbox.moe/ocl3oz.mp4" type="video/mp4">
     </video>
     <audio id="music2" loop>
-      <source src="https://files.catbox.moe/wtzm81.mp3" type="audio/mpeg">
+      <source src="https://files.catbox.moe/music2.mp3" type="audio/mpeg">
     </audio>
     <button onclick="toggleAudio('music2', this)">🔊 Hidupkan Audio</button>
-    <a href="https://alightcreative.com/am/share/u/QG2Fq8NmuEXK1BqvsruIFVMidZp1/p/GVxl1FLJPr-7f955e19038b1fd3?source=link">📦 File Project (6MB)</a>
-    <a href="https://drive.google.com/file/d/11KdGS2rMrgKQ3UGj5TTbd5p6zEIlBmLf/view?usp=drivesdk">📝 File XML</a>
+    <a href="https://files.catbox.moe/project2.zip">📦 File Project (7MB)</a>
+    <a href="https://files.catbox.moe/xml2.xml">📝 File XML</a>
   </div>
 
-  <!-- Video 3 -->
+  <!-- Card 3 -->
   <div class="card">
     <div class="header">
-      <img src="https://files.catbox.moe/eer4qt.png" alt="Foto Profil" class="avatar">
-      <h2>Preset 3 (16:9) — By Om Yudz</h2>
+      <img src="https://files.catbox.moe/avatar3.png" class="avatar" alt="Profil">
+      <h2>Preset 3 — By Om Yudz</h2>
     </div>
     <video controls>
       <source src="https://files.catbox.moe/8o7973.mp4" type="video/mp4">
     </video>
     <audio id="music3" loop>
-      <source src="https://files.catbox.moe/wtzm81.mp3" type="audio/mpeg">
+      <source src="https://files.catbox.moe/music3.mp3" type="audio/mpeg">
     </audio>
     <button onclick="toggleAudio('music3', this)">🔊 Hidupkan Audio</button>
-    <a href="https://alightcreative.com/am/share/u/QG2Fq8NmuEXK1BqvsruIFVMidZp1/p/SHLEDZn8bt-b91e46e893bb784b?source=link">📦 File Project (5MB)</a>
-    <a href="https://drive.google.com/file/d/16cppe9kHNj6KnnCahcmfhZ7P_amWjvoI/view?usp=drivesdk">📝 File XML</a>
+    <a href="https://files.catbox.moe/project3.zip">📦 File Project (4MB)</a>
+    <a href="https://files.catbox.moe/xml3.xml">📝 File XML</a>
   </div>
 
   <script>
-    function toggleAudio(audioId, btn) {
-      const audio = document.getElementById(audioId);
+    // Fungsi tombol musik
+    function toggleAudio(id, btn) {
+      const audio = document.getElementById(id);
       if (audio.paused) {
         audio.play();
-        btn.textContent = "🔇 Matikan Audio";
+        btn.innerText = "🔇 Matikan Audio";
       } else {
         audio.pause();
-        btn.textContent = "🔊 Hidupkan Audio";
+        btn.innerText = "🔊 Hidupkan Audio";
       }
     }
-  </script>
 
+    // Intro hilang setelah 5 detik
+    setTimeout(() => {
+      document.getElementById("intro").classList.add("fade-out");
+    }, 5000); // 5000 ms = 5 detik
+  </script>
 </body>
 </html>
