@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi Preset Catbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .card {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    h2 { font-size: 18px; margin-bottom: 10px; }
+    video {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      background: #334155;
+      color: white;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    button:hover { background: #475569; }
+    a {
+      display: block;
+      padding: 10px;
+      margin: 8px 0;
+      background: #334155;
+      color: #f1f5f9;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+    a:hover { background: #475569; }
+  </style>
+</head>
+<body>
+
+  <!-- Video 1 -->
+  <div class="card">
+    <h2>🎬 Preset 1</h2>
+    <video controls>
+      <source src="https://files.catbox.moe/abcd123.mp4" type="video/mp4">
+    </video>
+    <audio id="music1" loop>
+      <source src="https://files.catbox.moe/music123.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="toggleAudio('music1', this)">🔊 Hidupkan Audio</button>
+    <a href="https://files.catbox.moe/project1.zip">📦 File Project (5MB)</a>
+    <a href="https://files.catbox.moe/xml1.xml">📝 File XML</a>
+  </div>
+
+  <!-- Video 2 -->
+  <div class="card">
+    <h2>🎬 Preset 2</h2>
+    <video controls>
+      <source src="https://files.catbox.moe/efgh456.mp4" type="video/mp4">
+    </video>
+    <audio id="music2" loop>
+      <source src="https://files.catbox.moe/music456.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="toggleAudio('music2', this)">🔊 Hidupkan Audio</button>
+    <a href="https://files.catbox.moe/project2.zip">📦 File Project (6MB)</a>
+    <a href="https://files.catbox.moe/xml2.xml">📝 File XML</a>
+  </div>
+
+  <script>
+    function toggleAudio(audioId, btn) {
+      const audio = document.getElementById(audioId);
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = "🔇 Matikan Audio";
+      } else {
+        audio.pause();
+        btn.textContent = "🔊 Hidupkan Audio";
+      }
+    }
+  </script>
+
+</body>
+</html>
