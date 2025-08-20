@@ -7,194 +7,177 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    /* ===== INTRO ===== */
+    .intro {
       text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     }
-
-    /* ====== INTRO ====== */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    #intro video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    #main {
-      display: none;
-      padding-bottom: 40px;
-    }
-
-    /* ====== HEADER ====== */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-      background: #1e293b;
-      box-shadow: 0 0 20px #38bdf8;
-    }
-
-    header img {
-      width: 60px;
-      height: 60px;
+    .intro img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8;
+      border: 3px solid #0ff;
+      box-shadow: 0 0 20px #0ff;
+    }
+    .intro h1 {
+      font-size: 2rem;
+      margin: 1rem 0 0.5rem;
+      text-shadow: 0 0 10px #0ff;
+    }
+    .intro p {
+      color: #aaa;
+      font-size: 1rem;
     }
 
-    header h1 {
-      font-size: 1.8rem;
-      margin: 0;
-      color: #38bdf8;
-      text-shadow: 0 0 5px #38bdf8, 0 0 10px #38bdf8, 0 0 20px #38bdf8;
-    }
-
-    /* ====== GRID & CARD ====== */
-    .container {
+    /* ===== PRESET LIST ===== */
+    .preset-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 0 20px;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .preset-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      background: #1a1a1a;
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
     }
-
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #0ff;
+    }
     .card h2 {
       font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 8px #0ff;
     }
-
-    video {
+    .card video {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .download-info p {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+    }
+    .download-info a {
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .download-info a:hover {
+      text-decoration: underline;
     }
 
-    .btn-audio {
-      margin: 10px 0;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 6px;
-      background: #38bdf8;
-      color: black;
-      cursor: pointer;
-      transition: 0.3s;
+    .download-info p::before {
+      content: "✅ ";
+      color: #0f0;
     }
 
-    .btn-audio:hover {
-      background: #0ea5e9;
-      color: white;
+    /* ===== OUTRO ===== */
+    .outro {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
     }
-
-    .links {
-      margin-top: 10px;
-      font-size: 14px;
-      text-align: left;
+    .outro h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 8px #0ff;
     }
-
-    .links a {
-      color: #38bdf8;
+    .outro p {
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+    .socials a {
+      margin: 0 0.5rem;
+      color: #0ff;
+      font-weight: bold;
       text-decoration: none;
     }
-
-    .links a:hover {
+    .socials a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <!-- INTRO -->
-  <div id="intro">
-    <video autoplay muted playsinline id="introVideo">
-      <source src="https://files.catbox.moe/jgsuik.mp4" type="video/mp4">
-      Browser tidak mendukung video.
-    </video>
-  </div>
+  <header class="intro">
+    <img src="foto-om-yudz.jpg" alt="Om Yudz" class="avatar">
+    <h1>Om Yudz</h1>
+    <p>Selamat datang di koleksi preset saya 🎶</p>
+  </header>
 
-  <!-- MAIN CONTENT -->
-  <div id="main">
-    <header>
-      <img src="https://files.catbox.moe/eer4qt.png" alt="Logo">
-      <h1>Om Yudz Preset</h1>
-    </header>
+  <!-- PRESET LIST -->
+  <main>
+    <section class="preset-list">
 
-    <div class="container">
-      <!-- Card 1 -->
       <div class="card">
         <h2>Preset 1 — By Om Yudz</h2>
-        <video id="video1" controls>
-          <source src="https://files.catbox.moe/4zk2ey.mp4" type="video/mp4">
+        <video controls poster="thumb1.jpg">
+          <source src="preset1.mp4" type="video/mp4">
         </video>
-        <button class="https://files.catbox.moe/wtzm81.mp3" onclick="toggleAudio('video1')">On/Off Audio</button>
-        <div class="links">
-          📦 <a href="https://alightcreative.com/am/share/u/QG2Fq8NmuEXK1BqvsruIFVMidZp1/p/Q7Y3bgmIb5-ac33c0c74e1a18db?source=videoqr">File Project (5MB)</a><br>
-          📝 <a href="https://drive.google.com/file/d/1inzGKzjp_rpnW2ONR7V9-zrpEClghY-J/view?usp=drivesdk">File XML</a>
+        <div class="download-info">
+          <p><a href="#">File Project (5MB)</a></p>
+          <p><a href="#">File XML</a></p>
+          <p>Update: 20 Agustus 2025</p>
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="card">
         <h2>Preset 2 — By Om Yudz</h2>
-        <video id="video2" controls>
-          <source src="https://files.catbox.moe/ocl3oz.mp4" type="video/mp4">
+        <video controls poster="thumb2.jpg">
+          <source src="preset2.mp4" type="video/mp4">
         </video>
-        <button class="https://files.catbox.moe/wtzm81.mp3" onclick="toggleAudio('video2')">On/Off Audio</button>
-        <div class="links">
-          📦 <a href="https://alightcreative.com/am/share/u/QG2Fq8NmuEXK1BqvsruIFVMidZp1/p/GVxl1FLJPr-7f955e19038b1fd3?source=link">File Project (7MB)</a><br>
-          📝 <a href="https://drive.google.com/file/d/11KdGS2rMrgKQ3UGj5TTbd5p6zEIlBmLf/view?usp=drivesdk">File XML</a>
+        <div class="download-info">
+          <p><a href="#">File Project (6MB)</a></p>
+          <p><a href="#">File XML</a></p>
+          <p>Update: 20 Agustus 2025</p>
         </div>
       </div>
 
-      <!-- Card 3 -->
+      <!-- Ulangi untuk Preset 3 - 6 -->
       <div class="card">
-        <h2>Preset 3 — By Om Yudz</h2>
-        <video id="video3" controls>
-          <source src="https://files.catbox.moe/8o7973.mp4" type="video/mp4">
+        <h2>Preset 6 — By Om Yudz</h2>
+        <video controls poster="thumb6.jpg">
+          <source src="preset6.mp4" type="video/mp4">
         </video>
-        <button class="https://files.catbox.moe/wtzm81.mp3" onclick="toggleAudio('video3')">On/Off Audio</button>
-        <div class="links">
-          📦 <a href="https://alightcreative.com/am/share/u/QG2Fq8NmuEXK1BqvsruIFVMidZp1/p/SHLEDZn8bt-b91e46e893bb784b?source=link">File Project (4MB)</a><br>
-          📝 <a href="https://drive.google.com/file/d/16cppe9kHNj6KnnCahcmfhZ7P_amWjvoI/view?usp=drivesdk">File XML</a>
+        <div class="download-info">
+          <p><a href="#">File Project (8MB)</a></p>
+          <p><a href="#">File XML</a></p>
+          <p>Update: 20 Agustus 2025</p>
         </div>
       </div>
+
+    </section>
+  </main>
+
+  <!-- OUTRO -->
+  <footer class="outro">
+    <h2>Terima kasih sudah mampir 🙏</h2>
+    <p>Ikuti saya di sosial media:</p>
+    <div class="socials">
+      <a href="#">📷 Instagram</a> | 
+      <a href="#">▶️ YouTube</a> | 
+      <a href="#">💬 WhatsApp</a>
     </div>
-  </div>
+  </footer>
 
-  <script>
-    // Intro selesai → masuk ke main
-    const intro = document.getElementById("intro");
-    const introVideo = document.getElementById("introVideo");
-    const main = document.getElementById("main");
-
-    introVideo.onended = () => {
-      intro.style.display = "none";
-      main.style.display = "block";
-    };
-
-    // Toggle audio
-    function toggleAudio(id) {
-      const video = document.getElementById(id);
-      video.muted = !video.muted;
-    }
-  </script>
 </body>
 </html>
